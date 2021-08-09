@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Budgie Genetics Explorer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Small Javascript app to explore the effect of different budgie mutations" />
+  <meta name="keywords" content="budgie,budgerigar,bird,genetics,pet,colors,color,mutation,mutations" />
+  <link rel="stylesheet" type="text/css" href="./budgie.css">
+  <link rel="shortcut icon" href="./favicon.ico">
+</head>
+
+<body>
+  <div class="mainDiv">
+    <img class="logo" src="logo.PNG" />
+    <p align="center">
+      Welcome to Budgie Genetics Explorer, a fun to explore the effects of the genetic mutations of your budgie.
+      <br>Please read the notes bellow!
+    </p>
+    <div class="budgiegenex">
+      <div class="canvas">
+        <canvas id="budgieCanvas" class="budgieCanvas" width="480" height="640">
+        </canvas>
+      </div>
+      <div class="control">
+
+        <div class="mutheader">Blue mutations:</div>
+        <div>
+          <input type="radio" id="B1" name="b1Group" value="dewey" checked>
+          <label for="dewey">B</label>
+        </div>
+        <div>
+          <input type="radio" id="B2" name="b2Group" value="dewey" checked>
+          <label for="dewey">B</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="b11" name="b1Group" value="dewey">
+          <label for="dewey">b1</label>
+        </div>
+        <div>
+          <input type="radio" id="b12" name="b2Group" value="dewey">
+          <label for="dewey">b1</label>
+        </div>
+        <div class="mutdesc">
+          type one blue mutation
+        </div>
+        <div>
+          <input type="radio" id="b21" name="b1Group" value="dewey">
+          <label for="dewey">b2</label>
+        </div>
+        <div>
+          <input type="radio" id="b22" name="b2Group" value="dewey">
+          <label for="dewey">b2</label>
+        </div>
+        <div class="mutdesc">
+          type two blue mutation
+        </div>
+        <div>
+          <input type="radio" id="by21" name="b1Group" value="dewey">
+          <label for="dewey">by2</label>
+        </div>
+        <div>
+          <input type="radio" id="by22" name="b2Group" value="dewey">
+          <label for="dewey">by2</label>
+        </div>
+        <div class="mutdesc">
+          yellowface type two mutation
+        </div>
+        <div>
+          <input type="radio" id="bg1" name="b1Group" value="dewey">
+          <label for="dewey">bg</label>
+        </div>
+        <div>
+          <input type="radio" id="bg2" name="b2Group" value="dewey">
+          <label for="dewey">bg</label>
+        </div>
+        <div class="mutdesc">
+          goldenface mutation
+        </div>
+
+        <div class="mutheader">Dilution:</div>
+        <div>
+          <input type="radio" id="C1" name="c1Group" value="dewey" checked>
+          <label for="dewey">C</label>
+        </div>
+        <div>
+          <input type="radio" id="C2" name="c2Group" value="dewey" checked>
+          <label for="dewey">C</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="cg1" name="c1Group" value="dewey">
+          <label for="dewey">cg</label>
+        </div>
+        <div>
+          <input type="radio" id="cg2" name="c2Group" value="dewey">
+          <label for="dewey">cg</label>
+        </div>
+        <div class="mutdesc">
+          greywing mutation
+        </div>
+        <div>
+          <input type="radio" id="cw1" name="c1Group" value="dewey">
+          <label for="dewey">cw</label>
+        </div>
+        <div>
+          <input type="radio" id="cw2" name="c2Group" value="dewey">
+          <label for="dewey">cw</label>
+        </div>
+        <div class="mutdesc">
+          clearwing mutation
+        </div>
+        <div>
+          <input type="radio" id="cd1" name="c1Group" value="dewey">
+          <label for="dewey">cd</label>
+        </div>
+        <div>
+          <input type="radio" id="cd2" name="c2Group" value="dewey">
+          <label for="dewey">cd</label>
+        </div>
+        <div class="mutdesc">
+          dilute mutation
+        </div>
+
+        <div class="mutheader">Dark factor:</div>
+        <div>
+          <input type="radio" id="D1" name="d1Group" value="dewey" checked>
+          <label for="dewey">D</label>
+        </div>
+        <div>
+          <input type="radio" id="D2" name="d2Group" value="dewey" checked>
+          <label for="dewey">D</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="d1" name="d1Group" value="dewey">
+          <label for="dewey">d</label>
+        </div>
+        <div>
+          <input type="radio" id="d2" name="d2Group" value="dewey">
+          <label for="dewey">d</label>
+        </div>
+        <div class="mutdesc">
+          dark factor mutation
+        </div>
+
+        <div class="mutheader">Violet factor:</div>
+        <div>
+          <input type="radio" id="V1" name="v1Group" value="dewey" checked>
+          <label for="dewey">V</label>
+        </div>
+        <div>
+          <input type="radio" id="V2" name="v2Group" value="dewey" checked>
+          <label for="dewey">V</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="v1" name="v1Group" value="dewey">
+          <label for="dewey">v</label>
+        </div>
+        <div>
+          <input type="radio" id="v2" name="v2Group" value="dewey">
+          <label for="dewey">v</label>
+        </div>
+        <div class="mutdesc">
+          violet factor mutation
+        </div>
+
+        <div class="mutheader">Spangle:</div>
+        <div>
+          <input type="radio" id="S1" name="s1Group" value="dewey" checked>
+          <label for="dewey">S</label>
+        </div>
+        <div>
+          <input type="radio" id="S2" name="s2Group" value="dewey"checked>
+          <label for="dewey">S</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="s1" name="s1Group" value="dewey">
+          <label for="dewey">s</label>
+        </div>
+        <div>
+          <input type="radio" id="s2" name="s2Group" value="dewey">
+          <label for="dewey">s</label>
+        </div>
+        <div class="mutdesc">
+          spangle mutation
+        </div>
+
+        <div class="mutheader">Dominant pied:</div>
+        <div>
+          <input type="radio" id="T1" name="t1Group" value="dewey" checked>
+          <label for="dewey">T</label>
+        </div>
+        <div>
+          <input type="radio" id="T2" name="t2Group" value="dewey" checked>
+          <label for="dewey">T</label>
+        </div>
+        <div class="mutdesc">
+          normal gene
+        </div>
+        <div>
+          <input type="radio" id="t1" name="t1Group" value="dewey">
+          <label for="dewey">t</label>
+        </div>
+        <div>
+          <input type="radio" id="t2" name="t2Group" value="dewey">
+          <label for="dewey">t</label>
+        </div>
+        <div class="mutdesc">
+          dominant pied mutation
+        </div>
+        <div class="mutheader">Sex chromosomes:</div>
+        <div>
+          <input type="radio" id="W" name="zw1Group" value="dewey" checked>
+          <label for="dewey">W</label>
+        </div>
+        <div>
+          <input type="radio" id="Z2" name="zw2Group" value="dewey" checked>
+          <label for="dewey">Z</label>
+        </div>
+        <div class="mutdesc">
+        </div>
+        <div>
+          <input type="radio" id="Z1" name="zw1Group" value="dewey">
+          <label for="dewey">Z</label>
+        </div>
+        <div>
+        </div>
+        <div class="mutdesc">
+        </div>
+        <div>
+          <input type="radio" id="Zcin1" name="zw1Group" value="dewey">
+          <label for="dewey">Zcin</label>
+        </div>
+        <div>
+          <input type="radio" id="Zcin2" name="zw2Group" value="dewey">
+          <label for="dewey">Zcin</label>
+        </div>
+        <div class="mutdesc">
+          cinamon mutation
+        </div>
+        <div>
+          <input type="radio" id="Zino1" name="zw1Group" value="dewey">
+          <label for="dewey">Zino</label>
+        </div>
+        <div>
+          <input type="radio" id="Zino2" name="zw2Group" value="dewey">
+          <label for="dewey">Zino</label>
+        </div>
+        <div class="mutdesc">
+          lutino/albino mutation
+        </div>
+        <div>
+          <input type="radio" id="Zop1" name="zw1Group" value="dewey">
+          <label for="dewey">Zop</label>
+        </div>
+        <div>
+          <input type="radio" id="Zop2" name="zw2Group" value="dewey">
+          <label for="dewey">Zop</label>
+        </div>
+        <div class="mutdesc">
+          opaline mutation
+        </div>
+        <div>
+          <input type="radio" id="Zcino1" name="zw1Group" value="dewey">
+          <label for="dewey">Zcin,ino</label>
+        </div>
+        <div>
+          <input type="radio" id="Zcino2" name="zw2Group" value="dewey">
+          <label for="dewey">Zcin,ino</label>
+        </div>
+        <div class="mutdesc">
+          cinamon-ino rare mutation
+        </div>
+      </div>
+    </div>
+    <p>
+      BUDGIEGENEX is a Javascript application, where you can set different genetic mutations of the budgerigar and
+      see how these mutations alters the outlook of the budgie. The radio buttons on the right side represents
+      mutations. Each mutation is represented with two buttons, for the two chromosomes.
+      <a href="colorguide.html" target="_blank">You can find a color/pattern guide about how to create some common
+        color variants here.</a>
+    </p>
+
+    <!-- Hidden images for processing by js-->
+    <img src="./layers/contur.PNG" id="contur" class="layer">
+    <img src="./layers/base.PNG" id="base" class="layer">
+    <img src="./layers/face.PNG" id="face" class="layer">
+    <img src="./layers/eye.PNG" id="eye" class="layer">
+    <img src="./layers/eyering.PNG" id="eyering" class="layer">
+    <img src="./layers/ceres.PNG" id="ceres" class="layer">
+    <img src="./layers/cheek.PNG" id="cheek" class="layer">
+    <img src="./layers/body.PNG" id="body" class="layer">
+    <img src="./layers/points.PNG" id="points" class="layer">
+    <img src="./layers/spot.PNG" id="spot" class="layer">
+    <img src="./layers/wing.PNG" id="wing" class="layer">
+    <img src="./layers/headpattern.PNG" id="headpattern" class="layer">
+    <img src="./layers/headpatternop.PNG" id="headpatternop" class="layer">
+    <img src="./layers/wingpattern.PNG" id="wingpattern" class="layer">
+    <img src="./layers/bot.PNG" id="bot" class="layer">
+    <img src="./layers/leg.PNG" id="leg" class="layer">
+    <img src="./layers/tail.PNG" id="tail" class="layer">
+    <img src="./layers/upperwing.PNG" id="upperwing" class="layer">
+    <img src="./layers/tailpattern.PNG" id="tailpattern" class="layer">
+    <img src="./layers/dompied.PNG" id="dompied" class="layer">
+    <img src="./layers/dompied2.PNG" id="dompied2" class="layer">
+
+    Some notes:
+    <ul>
+
+
+      <li>The purpose of this application is fun.
+      </li>
+      <li>There are many shades of budgies which cannot be represented in this simple way.
+      </li>
+      <li>Pattern mutations have a very board range. What you see here is only one usual.
+      </li>
+      <li>The actual look of the budgie could (will) differ than as represented here.
+      </li>
+      <li>The mutations simulated here are only a part of the known budgerigar mutations.
+      </li>
+    </ul>
+
+
+
+    <br> Some resources I've been used:
+    <ul>
+      <li><a href="http://www.budgieplace.com/colorsguide.html" target="_blank">Budgie / Parakeet Colors and
+          Mutations Guide</a>
+      </li>
+      <li><a href="http://en.wikipedia.org/wiki/Budgerigar_colour_genetics" target="_blank">Budgerigar colour
+          genetics - Wikipedia</a>
+      </li>
+      <li><a href="http://www.birdhobbyist.com/parrotcolour/peter/yface01.html" target="_blank">Gene function in
+          Yellowface Budgerigars</a>
+      </li>
+    </ul>
+    <br>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="./control.js"></script>
+  <script src="./budgie.js"></script>
+  <script src="./panel.js"></script>
+  
+</body>
+
+</html>

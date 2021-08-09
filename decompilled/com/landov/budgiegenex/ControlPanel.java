@@ -12,21 +12,21 @@
 /*     */ 
 /*     */ public class ControlPanel
 /*     */   extends JPanel {
-/*     */   private JRadioButton B1;
-/*     */   private JRadioButton B2;
-/*     */   private JRadioButton b11;
-/*     */   private JRadioButton b12;
-/*     */   private JRadioButton b21;
-/*     */   private JRadioButton b22;
-/*     */   private JRadioButton by21;
-/*     */   private JRadioButton by22;
-/*     */   private JRadioButton bg1;
-/*     */   private JRadioButton bg2;
-/*     */   private JRadioButton C1;
-/*     */   private JRadioButton C2;
-/*     */   private JRadioButton cg1;
-/*     */   private JRadioButton cg2;
-/*     */   private JRadioButton cw1;
+/*1     */   private JRadioButton B1;
+/*2     */   private JRadioButton B2;
+/*3     */   private JRadioButton b11;
+/*4     */   private JRadioButton b12;
+/*5     */   private JRadioButton b21;
+/*6     */   private JRadioButton b22;
+/*7     */   private JRadioButton by21;
+/*8     */   private JRadioButton by22;
+/*9     */   private JRadioButton bg1;
+/*10     */   private JRadioButton bg2;
+/*11     */   private JRadioButton C1;
+/* 12    */   private JRadioButton C2;
+/*  13   */   private JRadioButton cg1;
+/*14     */   private JRadioButton cg2;
+/*15     */   private JRadioButton cw1;
 /*     */   private JRadioButton cw2;
 /*     */   private JRadioButton cd1;
 /*     */   private JRadioButton cd2;

@@ -79,7 +79,7 @@
 /*     */       } else {
 /*  80 */         this.this$0.budgiePanel.bodycolor = new Color(99, 142, 26);
 /*     */       } 
-/*     */     } 
+/*     */     } /*-----------
 /*     */     
 /*  84 */     if (ControlPanel.access$1500(this.this$0).isSelected()) {
 /*  85 */       this.this$0.budgiePanel.cerescolor = new Color(235, 188, 108);

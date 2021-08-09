@@ -1,0 +1,64 @@
+body {
+    background-color: #FEF7A0;
+    height: 100%;
+    font-family: 'Arial';
+    font-size: 1em;
+    color: black;
+    padding: 2px;
+}
+
+.budgieCanvas {
+    background-color: white;
+
+}
+
+div.budgiegenex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.control {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-auto-rows: minmax(auto, auto);
+    background-color: darkgreen;
+    font-size: 0.8em;
+    
+    color: yellow;
+    
+}
+
+div.mutheader{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-weight: bold;
+    padding: 2px;
+}
+
+div.mutdesc{
+    font-size: 0.8em;
+    padding-left: 4px;
+    align-self: center;
+}
+
+div.mainDiv {
+    max-width: 720px;
+    margin: auto;
+}
+
+img.logo {
+    width: 100%;
+    height: auto;
+}
+
+img.layer {
+    visibility: hidden;
+    display: none;
+}
+
+div.layers img.bot {
+    position: absolute;
+    top: __;
+    left: __;
+    z-index: 2;
+}
