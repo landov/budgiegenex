@@ -33,21 +33,25 @@ function getBlue(rgb){
     return getDecRGB(rgb, 2);
 }
 
-
-
-//Draw a single layer
-function drawLayer(ctx, layerImage, color) {
+//Extract imagedata from image
+function extarctImageData(image){
     var tempCanvas = document.createElement("canvas");  //tempCanvas for iterating through image data
     tempCanvas.width = 480;
     tempCanvas.height = 640;
     var tempCtx = tempCanvas.getContext("2d");
-    ctx.fillStyle = color;
-    tempCtx.drawImage(layerImage, 0, 0);
+    tempCtx.drawImage(image, 0, 0);
     var imageData = tempCtx.getImageData(0, 0, 480, 640);
+    return imageData;
+}
+
+
+//Draw a single layer
+function drawLayer(ctx, imageData, color) {
+    ctx.fillStyle = color;
     for (let i = 0; i < imageData.data.length; i = i + 4) {
         if (imageData.data[i] != 255) {
-            let x = (i / 4) % layerImage.width;
-            let y = Math.floor((i / 4) / layerImage.width);
+            let x = (i / 4) % 480;
+            let y = Math.floor((i / 4) / 480);
             ctx.fillRect(x, y, 1, 1);
         }
     }
