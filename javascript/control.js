@@ -94,7 +94,7 @@ function doBudgie(budgie) {
         if ($("#Zcin2").is(":checked")) {
             budgie.wingpatternColor = rgbToCSSColor(131, 104, 59);
             budgie.headpatternColor = rgbToCSSColor(131, 104, 59);
-            budgie.pointColor = rgbToCSSColor(131, 104, 59);
+            budgie.pointsColor = rgbToCSSColor(131, 104, 59);
         } else if ($("#Zino2").is(":checked")) {
             budgie.eyeColor = rgbToCSSColor(186, 56, 37);
             budgie.headPatternOn = false;
@@ -106,7 +106,7 @@ function doBudgie(budgie) {
         } else if ($("#Zcino2").is(":checked")) {
             budgie.wingpatternColor = rgbToCSSColor(196, 182, 172);
             budgie.headpatternColor = rgbToCSSColor(196, 182, 172);
-            budgie.pointColor = rgbToCSSColor(196, 182, 172);
+            budgie.pointsColor = rgbToCSSColor(196, 182, 172);
             budgie.bodyOn = false;
             budgie.spotColor = rgbToCSSColor(197, 205, 224);
             budgie.eyeColor = rgbToCSSColor(186, 56, 37);
@@ -116,14 +116,14 @@ function doBudgie(budgie) {
         } else {
             budgie.wingpatternColor = "#000000";
             budgie.headpatternColor = "#000000";
-            budgie.pointColor = "#000000";
+            budgie.pointsColor = "#000000";
         }
     } else {
         budgie.ceresColor = rgbToCSSColor(89, 131, 181);
         if (($("#Zcin1").is(":checked") && $("#Zcin2").is(":checked")) || ($("#Zcino1").is(":checked") && $("#Zcin2").is(":checked")) || ($("#Zcin1").is(":checked") && $("#Zcino2").is(":checked"))) {
             budgie.wingpatternColor = rgbToCSSColor(131, 104, 59);
             budgie.headpatternColor = rgbToCSSColor(131, 104, 59);
-            budgie.pointColor = rgbToCSSColor(131, 104, 59);
+            budgie.pointsColor = rgbToCSSColor(131, 104, 59);
         } else if ((!($("#Zino1").is(":checked")) || !($("#Zino2").is(":checked"))) && (!($("#Zcino1").is(":checked")) || !($("#Zino2").is(":checked"))) && (!($("#Zino1").is(":checked")) || !($("#Zcino2").is(":checked")))) {
             if ($("#Zop1").is(":checked") && $("#Zop2").is(":checked")) {
                 budgie.opalinOn = true;
@@ -131,14 +131,14 @@ function doBudgie(budgie) {
             } else if ($("#Zcino1").is(":checked") && $("#Zcino2").is(":checked")) {
                 budgie.wingpatternColor = rgbToCSSColor(196, 182, 172);
                 budgie.headpatternColor = rgbToCSSColor(196, 182, 172);
-                budgie.pointColor = rgbToCSSColor(196, 182, 172);
+                budgie.pointsColor = rgbToCSSColor(196, 182, 172);
                 budgie.bodyOn = false;
                 budgie.spotColor = rgbToCSSColor(197, 205, 224);
                 budgie.eyeColor = rgbToCSSColor(186, 56, 37);
             } else {
                 budgie.wingpatternColor = "#000000";
                 budgie.headpatternColor = "#000000";
-                budgie.pointColor = "#000000";
+                budgie.pointsColor = "#000000";
             }
         } else {
             budgie.headPatternOn = false;
@@ -163,7 +163,7 @@ function doBudgie(budgie) {
             let b = getBlue(budgie.wingpatternColor);
             budgie.wingpatternColor = rgbToCSSColor(r + (255 - r) / 2, g + (255 - g) / 2, b + (255 - b) / 2);
             budgie.headpatternColor = budgie.wingpatternColor;
-            budgie.pointColor = budgie.wingpatternColor;
+            budgie.pointsColor = budgie.wingpatternColor;
             r = getRed(budgie.bodyColor);
             g = getGreen(budgie.bodyColor);
             b = getBlue(budgie.bodyColor);
@@ -178,14 +178,14 @@ function doBudgie(budgie) {
             let b = getBlue(budgie.wingpatternColor);
             budgie.wingpatternColor = rgbToCSSColor(r + (255 - r) / 2, g + (255 - g) / 2, b + (255 - b) / 2);
             budgie.headpatternColor = budgie.wingpatternColor;
-            budgie.pointColor = budgie.wingpatternColor;
+            budgie.pointsColor = budgie.wingpatternColor;
         } else if ((!$("#cw1").is(":checked") || !$("#cw2").is(":checked")) && (!$("#cw1").is(":checked") || !$("#cd2").is(":checked")) && (!$("#cw2").is(":checked") || !$("#cd1").is(":checked"))) {
             let r = getRed(budgie.wingpatternColor);
             let g = getGreen(budgie.wingpatternColor);
             let b = getBlue(budgie.wingpatternColor);
             budgie.wingpatternColor = rgbToCSSColor(r + 15 * (255 - r) / 20, g + 15 * (255 - r) / 20, b + 15 * (255 - r) / 20);
             budgie.headpatternColor = budgie.wingpatternColor;
-            budgie.pointColor = budgie.wingpatternColor;
+            budgie.pointsColor = budgie.wingpatternColor;
             r = getRed(budgie.bodyColor);
             g = getGreen(budgie.bodyColor);
             b = getBlue(budgie.bodyColor);
@@ -200,7 +200,7 @@ function doBudgie(budgie) {
             let b = getBlue(budgie.wingpatternColor);
             budgie.wingpatternColor = rgbToCSSColor(r + 15 * (255 - r) / 20, g + 15 * (255 - r) / 20, b + 15 * (255 - r) / 20);
             budgie.headpatternColor = budgie.wingpatternColor;
-            budgie.pointColor = budgie.wingpatternColor;
+            budgie.pointsColor = budgie.wingpatternColor;
         }
     }
 
