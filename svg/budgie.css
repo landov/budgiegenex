@@ -1,64 +1,151 @@
 body {
-    background-color: #FEF7A0;
-    height: 100%;
-    font-family: 'Arial';
-    font-size: 1em;
-    color: black;
-    padding: 2px;
+  background-color: #FEF7A0;
+  height: 100%;
+  font-family: 'Arial';
+  font-size: 1em;
+  color: black;
 }
 
-.budgieCanvas {
-    background-color: white;
-
+.canvas {
+  background-color: white;
+  float: left;
+  max-width: 720px;
+  max-height: 640px;
 }
 
 div.budgiegenex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+  /* display: grid;
+    grid-template-columns: 1fr 1fr;*/
+}
+
+div.content {
+  clear: both;
 }
 
 div.control {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-auto-rows: minmax(auto, auto);
-    background-color: darkgreen;
-    font-size: 0.8em;
-    
-    color: yellow;
-    
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-auto-rows: minmax(auto, auto);
+  background-color: darkgreen;
+  font-size: 0.8em;
+  max-width: 240px;
+  color: yellow;
+  overflow: visible;
 }
 
-div.mutheader{
-    grid-column-start: 1;
-    grid-column-end: 4;
-    font-weight: bold;
-    padding: 2px;
+div.mobile {
+  display: none;
+  margin: 5px;
 }
 
-div.mutdesc{
-    font-size: 0.8em;
-    padding-left: 4px;
-    align-self: center;
+div.mutheader {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-weight: bold;
+  padding: 2px;
+}
+
+div.mutdesc {
+  font-size: 0.8em;
+  padding-left: 4px;
+  align-self: center;
 }
 
 div.mainDiv {
-    max-width: 720px;
-    margin: auto;
+  max-width: 720px;
+  margin: auto;
+  overflow-x: hidden;
+
+}
+
+div.logoDiv {
+  max-width: 720px;
+  margin: auto;
+  overflow-x: hidden;
 }
 
 img.logo {
-    width: 100%;
-    height: auto;
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  margin:auto;
 }
 
 img.layer {
-    visibility: hidden;
-    display: none;
+  visibility: hidden;
+  display: none;
 }
 
 div.layers img.bot {
-    position: absolute;
-    top: __;
-    left: __;
-    z-index: 2;
+  position: absolute;
+  top: __;
+  left: __;
+  z-index: 2;
 }
+
+svg {
+  max-width: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #8cd600;
+  max-width: 720px;
+  margin: auto;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #fef052;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #006400;
+  color: #fef052;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+a.topnav-right {
+  float: right;
+}
+
+.fb-share-button {
+  float: right;
+  margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .canvas {
+    width: 100%;
+  }
+  .control {
+    position: absolute;
+    width: 220px;
+    top: 0;
+    left: 100%;
+    transition: 0.3s;
+  }
+  div.budgiegenex {
+    overflow: scroll;
+  }
+  div.mobile {
+    display: block;
+  }
+}
+
+
+
