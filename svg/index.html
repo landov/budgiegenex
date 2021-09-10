@@ -5,6 +5,7 @@
   <title>Budgie Genetics Explorer</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="description" content="Small Javascript app to explore the effect of different budgie mutations" />
   <meta name="keywords" content="budgie,budgerigar,bird,genetics,pet,colors,color,mutation,mutations" />
   <link rel="stylesheet" type="text/css" href="./budgie.css">
@@ -12,13 +13,25 @@
 </head>
 
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+  <div class="logoDiv">
+  <img class="logo" src="logo.PNG" />
+</div>
   <div class="mainDiv">
-    <img class="logo" src="logo.PNG" />
-    <p align="center">
-      Welcome to Budgie Genetics Explorer, a fun to explore the effects of the genetic mutations of your budgie.
-      <br>Please read the notes bellow!
-    </p>
-    <div class="budgiegenex">
+    
+
+    <div class="topnav" id="myTopnav">
+      <a class="active" href="#home">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./colorguide.html">Colorguide</a>
+    </div>
+    
+    <div class="fb-share-button" data-href="https://budgiegenex.com" data-layout="button">
+    </div><div class="mobile"> Swipe left for controls! </div>
+
+
+    <div class="budgiegenex content">
       <div class="canvas">
 
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="480" height="640"
@@ -334,48 +347,12 @@
         </div>
       </div>
     </div>
-    <p>
-      BUDGIEGENEX is a Javascript application, where you can set different genetic mutations of the budgerigar and
-      see how these mutations alters the outlook of the budgie. The radio buttons on the right side represents
-      mutations. Each mutation is represented with two buttons, for the two chromosomes.
-      <a href="colorguide.html">You can find a color/pattern guide about how to create some common
-        color variants here.</a>
-    </p>
+    
 
-    Some notes:
-    <ul>
+   
 
 
-      <li>The purpose of this application is fun.
-      </li>
-      <li>There are many shades of budgies which cannot be represented in this simple way.
-      </li>
-      <li>Pattern mutations have a very board range. What you see here is only one usual.
-      </li>
-      <li>The actual look of the budgie could (will) differ than as represented here.
-      </li>
-      <li>The mutations simulated here are only a part of the known budgerigar mutations.
-      </li>
-    </ul>
-
-
-
-    <br> Some resources I've been used:
-    <ul>
-      <li><a href="http://www.budgieplace.com/colorsguide.html" target="_blank">Budgie / Parakeet Colors and
-          Mutations Guide</a>
-      </li>
-      <li><a href="http://en.wikipedia.org/wiki/Budgerigar_colour_genetics" target="_blank">Budgerigar colour
-          genetics - Wikipedia</a>
-      </li>
-      <li><a href="http://www.birdhobbyist.com/parrotcolour/peter/yface01.html" target="_blank">Gene function in
-          Yellowface Budgerigars</a>
-      </li>
-    </ul>
-    <br>
-    Sources on GitHub:<br>
-    <a href="https://github.com/landov/budgiegenex">https://github.com/landov/budgiegenex</a>
-    <p> Webmaster: landov@budgiegenex.com </p>
+    
   </div>
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="./budgie.js"></script>
