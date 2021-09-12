@@ -17,6 +17,9 @@ body {
   width: 66.66%;
 }
 
+.budgiegenex{
+  background-color: darkgreen;
+}
 .budgiegenex:after {
   content: "";
   display: table;
@@ -25,6 +28,7 @@ body {
 
 div.content {
   clear: both;
+  padding: 5px;
 }
 
 .control {
@@ -34,9 +38,15 @@ div.content {
   background-color: darkgreen;
   font-size: 0.8em;
   width: 33.33%;
+  height: 100%;
   float: left;
   color: yellow;
 
+}
+
+.fb-share-button{
+  float: right;
+  margin: 5px;
 }
 
 div.mobile {
@@ -66,9 +76,10 @@ div.mainDiv {
 }
 
 div.logoDiv {
-  max-width: 720px;
+  max-width: 100%;
   margin: auto;
   overflow-x: hidden;
+  background-color: #FEF7A0;
 }
 
 img.logo {
@@ -115,17 +126,38 @@ a.topnav-right {
   float: right;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
 
 
 @media screen and (max-width: 600px) {
+
+  body {
+    background-color: white;
+  }
+
+  .budgiegenex{
+    background-color: none;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
   .canvas {
     width: 100%;
   }
   .control {
     width:100%;
+
     font-size: 17px;
     color: black;
-    background-color: rgba(66, 27, 27, 0.3)
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 100%;
+    overflow: scroll;
+    border-top: solid;
   }
   
   div.mobile {
@@ -134,6 +166,7 @@ a.topnav-right {
 
   input[type=radio]{
     margin-bottom: 15px;
+    margin-left: 15px;
   }
 
   div.mutdesc {
