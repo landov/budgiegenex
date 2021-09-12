@@ -1,43 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #FEF7A0;
-  height: 100%;
   font-family: 'Arial';
   font-size: 1em;
   color: black;
+  margin: auto;
+  max-width: 720px;
 }
 
 .canvas {
   background-color: white;
   float: left;
-  max-width: 720px;
-  max-height: 640px;
+  width: 66.66%;
 }
 
-div.budgiegenex {
-  overflow: hidden;
-  position: relative;
-  /* display: grid;
-    grid-template-columns: 1fr 1fr;*/
+.budgiegenex:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 div.content {
   clear: both;
 }
 
-div.control {
+.control {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-auto-rows: minmax(auto, auto);
   background-color: darkgreen;
   font-size: 0.8em;
-  max-width: 240px;
+  width: 33.33%;
+  float: left;
   color: yellow;
-  overflow: visible;
+
 }
 
 div.mobile {
   display: none;
-  margin: 5px;
+  padding: 5px;
+  background-color: white;
 }
 
 div.mutheader {
@@ -54,7 +59,7 @@ div.mutdesc {
 }
 
 div.mainDiv {
-  max-width: 720px;
+
   margin: auto;
   overflow-x: hidden;
 
@@ -73,27 +78,14 @@ img.logo {
   margin:auto;
 }
 
-img.layer {
-  visibility: hidden;
-  display: none;
-}
-
-div.layers img.bot {
-  position: absolute;
-  top: __;
-  left: __;
-  z-index: 2;
-}
 
 svg {
-  max-width: 100%;
+  width: 100%;
 }
 
 .topnav {
   overflow: hidden;
   background-color: #8cd600;
-  max-width: 720px;
-  margin: auto;
 }
 
 .topnav a {
@@ -123,27 +115,32 @@ a.topnav-right {
   float: right;
 }
 
-.fb-share-button {
-  float: right;
-  margin: 5px;
-}
+
 
 @media screen and (max-width: 600px) {
   .canvas {
     width: 100%;
   }
   .control {
-    position: absolute;
-    width: 220px;
-    top: 0;
-    left: 100%;
-    transition: 0.3s;
+    width:100%;
+    font-size: 17px;
+    color: black;
+    background-color: rgba(66, 27, 27, 0.3)
   }
-  div.budgiegenex {
-    overflow: scroll;
-  }
+  
   div.mobile {
     display: block;
+  }
+
+  input[type=radio]{
+    margin-bottom: 15px;
+  }
+
+  div.mutdesc {
+    font-size: 0.8em;
+    padding-left: 4px;
+    align-self: center;
+    margin-bottom: 15px;
   }
 }
 
