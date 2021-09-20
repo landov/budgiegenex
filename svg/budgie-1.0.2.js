@@ -69,16 +69,27 @@ function resetBudgie() {
     opalinOn = false;
 }
 
+function violet(){
+    $("#body").attr("fill", rgbToCSSColor(157, 104, 254));
+}
+
+function lightViolet(){
+    $("#body").attr("fill", rgbToCSSColor(155, 148, 240));
+}
+
 // Do NOT ask about this logic. Done decades ago and I'm not remember why and how :)
 // Although not proud of it
 function doBudgie() {
     resetBudgie();
 
     if (!($("#B1").is(":checked")) && !($("#B2").is(":checked"))) {
+        //Blue budgie
         $("#base").attr("fill", "#FFFFFF");
         if (!($("#d1").is(":checked")) && !($("#d2").is(":checked"))) {
             if (($("#v1").is(":checked")) && ($("#v2").is(":checked"))) {
-                $("#body").attr("fill", rgbToCSSColor(94, 104, 196));
+                violet();
+            } else if (($("#v1").is(":checked")) || ($("#v2").is(":checked"))){
+                lightViolet();
             } else {
                 $("#body").attr("fill", rgbToCSSColor(114, 209, 221));
             }
@@ -92,7 +103,9 @@ function doBudgie() {
         if (($("#b11").is(":checked") && $("#b22").is(":checked")) || ($("#b21").is(":checked") && $("#b12").is(":checked"))) {
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
-        } else if ($("#bg1").is(":checked") && $("#bg2").is(":checked")) {
+        } else if ((($("#bg1").is(":checked") || ($("#by21").is(":checked"))) && $("#bg2").is(":checked")) || 
+                  (($("#bg2").is(":checked") || ($("#by22").is(":checked"))) && $("#bg1").is(":checked"))) {
+            // Goldenface 
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 240, 82));
         } else if (($("#b21").is(":checked") && $("#bg2").is(":checked")) || ($("#b22").is(":checked") && $("#bg1").is(":checked"))) {
