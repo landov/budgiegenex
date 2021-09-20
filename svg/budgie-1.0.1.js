@@ -92,7 +92,9 @@ function doBudgie() {
         if (($("#b11").is(":checked") && $("#b22").is(":checked")) || ($("#b21").is(":checked") && $("#b12").is(":checked"))) {
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
-        } else if ($("#bg1").is(":checked") && $("#bg2").is(":checked")) {
+        } else if ((($("#bg1").is(":checked") || ($("#by21").is(":checked"))) && $("#bg2").is(":checked")) || 
+                  (($("#bg2").is(":checked") || ($("#by22").is(":checked"))) && $("#bg1").is(":checked"))) {
+            // Goldenface 
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 240, 82));
         } else if (($("#b21").is(":checked") && $("#bg2").is(":checked")) || ($("#b22").is(":checked") && $("#bg1").is(":checked"))) {
