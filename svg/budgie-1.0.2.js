@@ -69,16 +69,27 @@ function resetBudgie() {
     opalinOn = false;
 }
 
+function violet(){
+    $("#body").attr("fill", rgbToCSSColor(157, 104, 254));
+}
+
+function lightViolet(){
+    $("#body").attr("fill", rgbToCSSColor(155, 148, 240));
+}
+
 // Do NOT ask about this logic. Done decades ago and I'm not remember why and how :)
 // Although not proud of it
 function doBudgie() {
     resetBudgie();
 
     if (!($("#B1").is(":checked")) && !($("#B2").is(":checked"))) {
+        //Blue budgie
         $("#base").attr("fill", "#FFFFFF");
         if (!($("#d1").is(":checked")) && !($("#d2").is(":checked"))) {
             if (($("#v1").is(":checked")) && ($("#v2").is(":checked"))) {
-                $("#body").attr("fill", rgbToCSSColor(94, 104, 196));
+                violet();
+            } else if (($("#v1").is(":checked")) || ($("#v2").is(":checked"))){
+                lightViolet();
             } else {
                 $("#body").attr("fill", rgbToCSSColor(114, 209, 221));
             }
