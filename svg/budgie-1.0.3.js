@@ -69,11 +69,11 @@ function resetBudgie() {
     opalinOn = false;
 }
 
-function violet(){
+function violet() {
     $("#body").attr("fill", rgbToCSSColor(157, 104, 254));
 }
 
-function lightViolet(){
+function lightViolet() {
     $("#body").attr("fill", rgbToCSSColor(155, 148, 240));
 }
 
@@ -85,10 +85,11 @@ function doBudgie() {
     if (!($("#B1").is(":checked")) && !($("#B2").is(":checked"))) {
         //Blue budgie
         $("#base").attr("fill", "#FFFFFF");
+        //Violet and dark factors
         if (!($("#d1").is(":checked")) && !($("#d2").is(":checked"))) {
             if (($("#v1").is(":checked")) && ($("#v2").is(":checked"))) {
                 violet();
-            } else if (($("#v1").is(":checked")) || ($("#v2").is(":checked"))){
+            } else if (($("#v1").is(":checked")) || ($("#v2").is(":checked"))) {
                 lightViolet();
             } else {
                 $("#body").attr("fill", rgbToCSSColor(114, 209, 221));
@@ -100,11 +101,13 @@ function doBudgie() {
         } else {
             $("#body").attr("fill", rgbToCSSColor(94, 104, 196));
         }
+        //Yellowface mutations
         if (($("#b11").is(":checked") && $("#b22").is(":checked")) || ($("#b21").is(":checked") && $("#b12").is(":checked"))) {
+            //Type I Yellowface 
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
-        } else if ((($("#bg1").is(":checked") || ($("#by21").is(":checked"))) && $("#bg2").is(":checked")) || 
-                  (($("#bg2").is(":checked") || ($("#by22").is(":checked"))) && $("#bg1").is(":checked"))) {
+        } else if ((($("#bg1").is(":checked") || ($("#by21").is(":checked"))) && $("#bg2").is(":checked")) ||
+            (($("#bg2").is(":checked") || ($("#by22").is(":checked"))) && $("#bg1").is(":checked"))) {
             // Goldenface 
             $("#face").attr("visibility", "visible");
             $("#face").attr("fill", rgbToCSSColor(254, 240, 82));
@@ -114,11 +117,24 @@ function doBudgie() {
             $("#body").attr("fill", rgbToCSSColor(getRed($("#body").attr("fill")) + 10, getGreen($("#body").attr("fill")) + 10, getBlue($("#body").attr("fill"))));
             $("#base").attr("fill", rgbToCSSColor(getRed($("#base").attr("fill")), getGreen($("#base").attr("fill")), getBlue($("#base").attr("fill")) - 20));
         } else if ((!($("#b11").is(":checked")) || !($("#bg2").is(":checked"))) && (!($("#b12").is(":checked")) || !($("#bg1").is(":checked")))) {
-            if (($("#b11").is(":checked") && $("#by22").is(":checked")) || ($("#b12").is(":checked") && $("#by21").is(":checked"))) {
-                $("#face").attr("visibility", "visible");
-                $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
-                $("#body").attr("fill", rgbToCSSColor(getRed($("#body").attr("fill")), getGreen($("#body").attr("fill")) + 45, getBlue($("#body").attr("fill"))));
-                $("#base").attr("fill", rgbToCSSColor(getRed($("#base").attr("fill")), getGreen($("#base").attr("fill")), getBlue($("#base").attr("fill")) - 40));
+            if (($("#b11").is(":checked") && $("#by22").is(":checked")) || ($("#b12").is(":checked") && $("#by21").is(":checked")) ||
+                ($("#b21").is(":checked") && $("#by22").is(":checked")) || ($("#b22").is(":checked") && $("#by21").is(":checked")) ||
+                ($("#by21").is(":checked") && $("#by22").is(":checked"))) {
+                //Single factor Type II Yellowface
+                if ($("#by21").is(":checked") && $("#by22").is(":checked")) {
+                    //Double factor
+                    $("#face").attr("visibility", "visible");
+                    $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
+                } else {
+                    $("#face").attr("visibility", "visible");
+                    $("#face").attr("fill", rgbToCSSColor(254, 247, 150));
+                    if ($("#b21").is(":checked") || $("#b22").is(":checked")) {
+                        $("#body").attr("fill", rgbToCSSColor(getRed($("#body").attr("fill")), getGreen($("#body").attr("fill")) + 10, getBlue($("#body").attr("fill"))));
+                    } else {
+                        $("#body").attr("fill", rgbToCSSColor(getRed($("#body").attr("fill")), getGreen($("#body").attr("fill")) + 45, getBlue($("#body").attr("fill"))));
+                    }
+                    $("#base").attr("fill", rgbToCSSColor(getRed($("#base").attr("fill")), getGreen($("#base").attr("fill")), getBlue($("#base").attr("fill")) - 40));
+                }
             }
         } else {
             $("#face").attr("visibility", "visible");
@@ -127,6 +143,7 @@ function doBudgie() {
             $("#base").attr("fill", rgbToCSSColor(getRed($("#base").attr("fill")), getGreen($("#base").attr("fill")), getBlue($("#base").attr("fill")) - 40));
         }
     } else {
+        //Green budgie
         $("#base").attr("fill", rgbToCSSColor(254, 240, 82));
         if (!($("#d1").is(":checked")) && !($("#d2").is(":checked"))) {
             $("#body").attr("fill", rgbToCSSColor(140, 214, 0));
@@ -300,10 +317,10 @@ function doBudgie() {
     $("#tailpattern").attr("fill", $("#wingpattern").attr("fill"));
 
     if ($("#dompied").attr("visibility") == "visible") {
-        $("#dompied").attr("fill",$("#base").attr("fill"));
+        $("#dompied").attr("fill", $("#base").attr("fill"));
     }
     if ($("#dompied2").attr("visibility") == "visible") {
-        $("#dompied2").attr("fill",$("#base").attr("fill"));
+        $("#dompied2").attr("fill", $("#base").attr("fill"));
     }
 
 }
